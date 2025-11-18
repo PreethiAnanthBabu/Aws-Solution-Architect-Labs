@@ -12,24 +12,24 @@
 # Key Components
   1. Backup Plan
      Defines:
-          Backup rules
-          Schedule (cron or simple)
-          Lifecycle (cold storage transition + expiration)
-          Copy rules (cross-region/cross-account)
+          -Backup rules
+          -Schedule (cron or simple)
+          -Lifecycle (cold storage transition + expiration)
+          -Copy rules (cross-region/cross-account)
 
   2. Backup Vault
-          Encrypted storage container for backups
-          You can apply resource-based policies for cross-account access
-          You can enforce a Vault Lock (WORM: Write Once, Read Many), preventing deletions even by admins
+          -Encrypted storage container for backups
+          -You can apply resource-based policies for cross-account access
+          -You can enforce a Vault Lock (WORM: Write Once, Read Many), preventing deletions even by admins
 
   3. Protected Resources
-          Resources that are being backed up according to a plan.
+          -Resources that are being backed up according to a plan.
 
 4. Recovery Points
-          Actual backups—can be full or incremental.
+          -Actual backups—can be full or incremental.
      
 # AWS Backup vs. Snapshots
-     Snapshots are service-specific (e.g., EBS snapshot → only for EBS).
-     AWS Backup provides centralization, scheduling, policies, and compliance, covering many services.
+     -Snapshots are service-specific (e.g., EBS snapshot → only for EBS).
+     -AWS Backup provides centralization, scheduling, policies, and compliance, covering many services.
 
     
