@@ -62,17 +62,17 @@ It translates human-friendly domain names (like google.com) into IP addresses (l
                 ELB
                 S3 website
                 API Gateway
-  -Traffic Routing Policies
-      Simple
-      Weighted (e.g., 70% → server A, 30% → server B)
-      Latency-based routing
-      Failover routing
-      Geolocation routing
-      Multi-value answer routing
-  -Health Checks + Failover
-      Route 53 can monitor endpoints; if a server goes down, it automatically reroutes traffic.
-  -High Availability
-      Because it's spread globally through AWS DNS infrastructure.
+    -Traffic Routing Policies
+       Simple
+       Weighted (e.g., 70% → server A, 30% → server B)
+       Latency-based routing
+       Failover routing
+       Geolocation routing
+       Multi-value answer routing
+    -Health Checks + Failover
+       Route 53 can monitor endpoints; if a server goes down, it automatically reroutes traffic.
+    -High Availability
+       Because it's spread globally through AWS DNS infrastructure.
 
 
 
