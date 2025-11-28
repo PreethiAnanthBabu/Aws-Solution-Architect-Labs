@@ -13,7 +13,7 @@ It translates human-friendly domain names (like google.com) into IP addresses (l
 
 # Key functions of Route 53
     -DNS Hosting  
-       Host DNS zones and records (A, AAAA, CNAME, MX, etc.).
+       Host DNS zones and records.Records live inside a Hosted Zone, and Name Servers publish that Hosted Zone to the               internet.
     -DNS Records Types
        1. A Record (Address Record)
             Maps a domain to an IPv4 address.
