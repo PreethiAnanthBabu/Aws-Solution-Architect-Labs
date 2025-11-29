@@ -1,7 +1,7 @@
 # DNS:
      DNS (Domain Name System) is the “phonebook of the internet.”
 It translates human-friendly domain names (like google.com) into IP addresses (like 142.250.190.14) that computers use to locate and communicate with each other.
-
+     
 # Key functions of DNS
     -Domain → IP translation
     -Load distribution (via round-robin, etc.)
@@ -74,7 +74,26 @@ It translates human-friendly domain names (like google.com) into IP addresses (l
     -High Availability
        Because it's spread globally through AWS DNS infrastructure.
 
+# Routing Policies:
+     A routing policy in Amazon Route 53 is a set of rules that controls how DNS queries are answered—specifically, which endpoint (IP address, load balancer, or resource) a user is directed to when they request a domain name.
 
+# Types:
+     1. Simple Routing 
+          -Route 53 stores one DNS record for a domain.
+          -Whenever a DNS query comes, it always returns the same single IP/endpoint.
+          -There is no decision-making logic.
+          -It does not evaluate health or conditions.
+          -In simple words:
+             “Every user always gets the same destination.”
+     2. Weighted Routing 
+          -Multiple DNS records exist for the same domain name.
+          -Each record is assigned a numeric weight.
+          -When a DNS query arrives, Route 53:
+              Calculates the probability based on weights
+              Randomly returns one record according to that probability
+          -Example logic:
+               If weights are 80 and 20
+               → About 80% users go to resource A, 20% to B.
 
 
 
