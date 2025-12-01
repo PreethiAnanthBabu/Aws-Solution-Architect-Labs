@@ -94,6 +94,50 @@ It translates human-friendly domain names (like google.com) into IP addresses (l
           -Example logic:
                If weights are 80 and 20
                → About 80% users go to resource A, 20% to B.
+     3. Latency-Based Routing 
+          -Route 53 maintains latency measurement data between AWS regions and user networks.
+          -When a user makes a DNS query:
+               Route 53 identifies the user’s location (network)
+               Checks which AWS region has lowest measured latency
+               Returns the DNS record mapped to that fastest region
+               It does not use distance — it uses actual network latency data.
+          -Conceptually:
+               “User is sent to the resource that responds the fastest over the network.” 
+     4. Failover Routing
+          -Two DNS records exist:
+                Primary
+                Secondary
+          -A health check continuously monitors the Primary.
+          -When a DNS query comes:
+                If Primary is healthy → return Primary IP
+                If Primary is unhealthy → return Secondary IP
+          -Failover happens at DNS resolution time, not during an active session.
+          -Conceptually:
+                “Use the main site when it’s healthy, otherwise switch to backup.”
+     5. Geolocation Routing 
+          -Route 53 determines user’s geographic location from IP address.
+          -DNS records are mapped to:
+                Countries
+                Continents
+                Or a Default location
+          -When a query arrives:
+                User’s country is identified
+                Matching geographic rule is selected
+                Corresponding DNS record is returned
+                If no match → Default record is returned
+          -Conceptually:
+                “Users are routed based on their country/continent, not performance.”
+     6. Geoproximity Routing — How it Works
+         -Route 53 calculates the physical distance between user and resources.
+         -It then optionally applies a bias value:
+                Positive bias → attracts more traffic
+                Negative bias → repels traffic
+         -DNS response is chosen based on:
+                Distance
+                Plus/minus configured bias
+                Unlike geolocation, this is based on distance, not political boundaries.
+         -Conceptually:
+                “Users go to the closest resource, unless bias shifts them elsewhere.”
 
 
 
