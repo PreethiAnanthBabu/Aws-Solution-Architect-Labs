@@ -138,6 +138,26 @@ It translates human-friendly domain names (like google.com) into IP addresses (l
                 Unlike geolocation, this is based on distance, not political boundaries.
          -Conceptually:
                 “Users go to the closest resource, unless bias shifts them elsewhere.”
+     7. Multivalue Answer Routing
+         -Multiple DNS records exist for the same name.
+         -Each record has a health check.
+         -When a DNS query arrives:
+                Route 53 filters out unhealthy records
+                Returns up to 8 healthy IP addresses
+                The client chooses one IP to connect to
+         -Route 53 does not control which returned IP the client uses.
+         -Conceptually:
+               “Return multiple healthy IPs and let the client pick one.”
+     8. IP-Based Routing
+         -DNS records are mapped to specific CIDR IP ranges.
+         -When a user makes a DNS request:
+               Route 53 extracts the source IP address
+               Matches it against the configured CIDR rules
+               Returns the DNS record associated with that CIDR
+        -If multiple rules match, the most specific CIDR wins.
+        -If nothing matches, a default record is returned.
+        -Conceptually:
+              “DNS response depends on which network the user belongs to.”
 
 
 
