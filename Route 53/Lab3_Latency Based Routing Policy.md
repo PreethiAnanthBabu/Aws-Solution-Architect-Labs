@@ -9,4 +9,4 @@ AWS Console > Create 3 ec2 linux instances in 3 different regions (N.virginia , 
 > Aws Console > Route 53 > Add record 1(select latency based policy and select the region where instance 1 is created)
 > Add record 2(select latency based policy and select the region where instance 2 is created)
 > Add record 3(select latency based policy and select the region where instance 3 is created)
-> copy the domain name and paste in browser > Now we can see output from any one o the region based on latency
+> copy the domain name and paste in browser > Now we can see output from any one oF the region based on latency
