@@ -1,0 +1,8 @@
+AWS Console > Create EC2 Linux instance > allow Http port in inbound rule > Connect with the EC2 instance > Install Docker 
+" Sudo -i
+  yum install docker -y
+  service docker status
+  service docker start "
+> pull httpd image from docker hub
+" docker pull httpd:trixie 
+  docker images "
