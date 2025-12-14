@@ -25,4 +25,10 @@ AWS Console > Create EC2 Linux instance > allow Http port in inbound rule > Conn
             CMD["echo","This is my first dockerfile"] - Defines the default command for the container
                                                         Executes when the container starts )
 > Build the Dockerfile
-  " docker build tag --demofile:v1 ."
+  " docker build tag --demofile1:v1 ."
+            ( --demofile1:v1 . - space. is given to search for the Dockerfile in the current directory
+> Login to your dockerhub " docker login" > Give username and password > Tag to the dockerhub account
+  "docker tag demofile1:V1 preethiananthbabu/demofile1:v1 "
+> Push this file into your dockerhub
+  "docker push preethiananthbabu/demofile1:v1 "
+> Now we can see our dockerfile in Dockerhub account
