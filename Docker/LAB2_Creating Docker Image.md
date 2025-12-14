@@ -23,4 +23,6 @@ AWS Console > Create EC2 Linux instance > allow Http port in inbound rule > Conn
                                                         Updates the Ubuntu package index
                                                         Creates a new image layer
             CMD["echo","This is my first dockerfile"] - Defines the default command for the container
-                                                        Executes when the container starts
+                                                        Executes when the container starts )
+> Build the Dockerfile
+  " docker build tag --demofile:v1 ."
