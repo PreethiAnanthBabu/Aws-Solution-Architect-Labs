@@ -6,3 +6,19 @@
      -Repository
      -Repository Policy 
      -Images
+# Elastic Container Services:
+     ECS is AWS’s managed container orchestration service that runs and manages Docker containers on EC2 or Fargate.
+     ECS:
+        -Runs containers
+        -Decides where containers run
+        -Keeps them running
+        -Restarts them if they fail
+        -Scales them up/down
+        -Integrates with load balancers, IAM, and CloudWatch
+     All of this is called container orchestration
+#  Main building blocks (simple) 
+    -Cluster → where containers run
+    -Nodes are the machines that actually run the containers.
+    -Task Definition → how containers run
+    -Task → a running container
+    -Service → keeps tasks running
