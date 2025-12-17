@@ -30,3 +30,5 @@ AWS Console > Create EC2 Linux Instance > Connect with the Linux Instance > Inst
 > Login succeeded > copy the tag and push command from the ecr and paste it in EC2 Linux instance 
   " docker tag demorepository:latest 995876471567.dkr.ecr.us-east-1.amazonaws.com/demorepository:latest
     docker push 995876471567.dkr.ecr.us-east-1.amazonaws.com/demorepository:latest "
+> Now we can see our image in ecr repository 
+
