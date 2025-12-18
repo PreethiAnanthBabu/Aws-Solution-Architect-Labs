@@ -30,10 +30,11 @@ AWS Console > Create EC2 Linux Instance > Connect with the Linux Instance > Inst
 > Login succeeded > copy the tag and push command from the ecr and paste it in EC2 Linux instance 
   " docker tag demorepository:latest 995876471567.dkr.ecr.us-east-1.amazonaws.com/demorepository:latest
     docker push 995876471567.dkr.ecr.us-east-1.amazonaws.com/demorepository:latest "
-> Now we can see our image in ecr repository > AWS Console > ECS > create cluster > Select Fargate and self managed instance 
-and enable create new autoscaling > create clusters > AWS Console > IAM > Roles > Create new role > select aws services:ecs-tasks with these policy permissions 
+> Now we can see our image in ecr repository > AWS Console > ECS > create cluster > Select Fargate and managed instance 
+> create clusters > AWS Console > IAM > Roles > Create new role > select aws services:ecs-tasks with these policy permissions 
   " AmazonECSTaskExecutionRolePolicy
     CloudWatchLogsFullAccess "
-> Task definition > create new task definition > Select ec2 and select the Iam role which we have created and give the image name and port 
-> Create taskdefinition > 
+> Task definition > create new task definition > select the taskrole which we have created and give container name and image URI
+and port > create task definition > clusters > service > create new service > Tasks > click running tasks > select public IP
+> Now we can see the output 
 
