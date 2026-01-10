@@ -1,11 +1,11 @@
 # Global Infrastructure:
      AWS Global Infrastructure is the worldwide network of data centers and networking components that allows AWS to deliver services with high availability, low latency, scalability, and fault tolerance.
-   1.Region -A Region is a geographical area where AWS has multiple data centers.
-     Key points
+    1.Region -A Region is a geographical area where AWS has multiple data centers.
+      Key points
        -Each Region is independent
        -Data does not move between Regions unless you configure it
        -You choose a Region when launching resources
-     Example Regions
+      Example Regions
        -us-east-1 – North Virginia
        -eu-west-1 – Ireland
        -ap-south-1 – Mumbai
