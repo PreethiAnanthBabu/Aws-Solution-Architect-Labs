@@ -6,8 +6,6 @@ AWS Console > EC2 > Launch Instance > Give Name , keypair(.pem file), select AMI
 
 
 
-
-
 # Notes:
   3/3 Checks Passed:
      ✔ AWS infrastructure is healthy
