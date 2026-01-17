@@ -47,5 +47,13 @@
     -Reserved Instances – 1 or 3-year commitment (cheaper)
     -Savings Plans – Flexible commitment
     -Spot Instances – Up to 90% cheaper (can be interrupted)
-        
+
+# Elastic IP:
+     Normal public IPs change when an instance is stopped and started.Elastic IP remains the same even after stop/start
+     Useful for production servers and DNS mapping  
+# Key Features
+    -Static IPv4 address
+    -Region-specific
+    -Can be moved between instances
+    -One Elastic IP is free only when attached to a running instance
 
