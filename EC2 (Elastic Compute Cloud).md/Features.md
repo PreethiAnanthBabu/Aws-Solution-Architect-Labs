@@ -1,4 +1,4 @@
-# Amazon EC2:
+# Amazon EC2::
      Amazon EC2 provides scalable, on-demand compute capacity in the form of virtual machines, allowing users to run applications with configurable CPU, memory, networking, 
      and storage.
 
@@ -56,4 +56,25 @@
     -Region-specific
     -Can be moved between instances
     -One Elastic IP is free only when attached to a running instance
+
+# AMI(Amazon Machine Image):
+     An AMI (Amazon Machine Image) is a preconfigured template used to launch EC2 instances in AWS.
+# What an AMI Includes
+    -Operating System (Linux / Windows)
+    -Application software
+    -Configuration settings
+    -Root volume snapshot (EBS)
+# Why AMI is Important
+    -Launch multiple identical EC2 instances
+    -Faster provisioning
+    -Consistent environments
+    -Easy backup and recovery
+# Types of AMIs
+    -AWS-provided AMIs (Amazon Linux, Windows)
+    -Marketplace AMIs (paid/free third-party software)
+    -Custom AMIs (created by users)
+# When to Use What
+    -Use AMI when you need full OS control
+    -Use Docker when you want fast, portable, scalable deployments
+    
 
