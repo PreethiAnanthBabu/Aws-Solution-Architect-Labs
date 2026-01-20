@@ -76,5 +76,6 @@
 # When to Use What
     -Use AMI when you need full OS control
     -Use Docker when you want fast, portable, scalable deployments
+    -AMI is for root volumes (C drive) and snapshots are for data volumes (D, E drive)
     
 
