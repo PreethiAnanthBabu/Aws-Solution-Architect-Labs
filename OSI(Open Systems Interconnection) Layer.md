@@ -36,3 +36,12 @@
           -Cables
           -Wi-Fi signal
           -Electricity
+    
+     7 App: Browser creates HTTP request
+     6 Pres: Encrypts data (HTTPS)
+     5 Sess: Keeps session alive 
+     4 Trans: TCP sends data
+     3 Net: IP routes data
+     2 Link: MAC address delivery
+     1 Phys: Data sent as signals
+
