@@ -44,3 +44,15 @@
 
     5.Hashing Method
       How it works: The hashing method is a load-balancing technique where the same client is always sent to the same server.
+      Example:
+          Client sends a request
+          Load balancer takes a value (e.g. client IP)
+          Applies a hash function
+          Hash result maps to a server
+          Request is sent to that server
+          Client IP → Hash Function → Server B
+          Same IP → same hash → same server
+     6.Random
+       How it works: Randomly picks a server
+       ✅ Very simple
+       ❌ Unpredictable load distribution
