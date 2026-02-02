@@ -56,3 +56,33 @@
        How it works: Randomly picks a server
        ✅ Very simple
        ❌ Unpredictable load distribution
+# Types of Load Balancers:
+     Load balancers are mainly classified by where they work and what they understand.
+     🔹 Application Load Balancer (ALB)
+         Works at Layer 7(Application Layer)
+         Understands HTTP/HTTPS
+         Can route like:
+             /login → server A
+             /api → server B
+         Supports:
+             Microservices
+             Kubernetes
+             AWS WAF
+         👉 Best choice for modern apps
+     🔹 Network Load Balancer (NLB)
+         Works at Layer 4(Transport Layer)
+         Very fast
+         Doesn’t look inside HTTP
+         Handles:
+             Millions of requests
+             TCP / UDP traffic
+             Supports static IP
+         👉 Best for performance and low latency
+     🔹 Classic Load Balancer (CLB)
+         Old AWS load balancer
+         Can work at Layer 4 or 7
+         Very limited features
+         No modern routing
+         👉 AWS does NOT recommend it for new apps
+     
+     
