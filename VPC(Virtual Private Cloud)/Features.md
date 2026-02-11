@@ -40,23 +40,23 @@
          /8 – /15 	2nd octet
          /16 – /23	3rd octet ✅
          /24 – /31	4th octet
-     Example 1:                                                                       Example 2:
-         CIDR Range = 10.0.0.0/16 into 4 subnets                                          CIDR Range = 10.0.0.0/24 into 2 subnets
-         32-16= 16                                                                        32-24= 8
-         2^16 = 65536 IP's                                                                2^8 = 256 IP's
-         Subnet range = 10.0.0.0/18                                                       Subnet Range = 10.0.0.0/25
-             The third number now moves in blocks                                             The Fourth octet now moves in blocks
-             Each block is 64 numbers wide (256 ÷ 4 = 64)                                     Each block is 128 numbers wide (256  ÷ 2 = 128) 
-             The original third octet goes from:0 → 255                                       The original Fourth octet goes from:0 → 255
-             Split that into 4 equal chunks:                                                  Split that into 4 equal chunks:
-             0   → 63                                                                         0   → 127
-             64  → 127                                                                        128 → 255
-             128 → 191                                                                        Subnet 1:
-             192 → 255                                                                             10.0.0.0/25
-             Subnet 1:                                                                             Range: 10.0.0.0 → 10.0.0.127/25
-                  10.0.0.0/18                                                                 Subnet 2:
-                  Range: 10.0.0.0 → 10.0.63.255                                                    10.0.0.128/25                                                 
-             Subnet 2:                                                                             Range: 10.0.0.128 → 10.0.0.255
+     Example 1:                                                           Example 2:
+         CIDR Range = 10.0.0.0/16 into 4 subnets                              CIDR Range = 10.0.0.0/24 into 2 subnets
+         32-16= 16                                                            32-24= 8
+         2^16 = 65536 IP's                                                    2^8 = 256 IP's
+         Subnet range = 10.0.0.0/18                                           Subnet Range = 10.0.0.0/25
+             The third number now moves in blocks                                 The Fourth octet now moves in blocks
+             Each block is 64 numbers wide (256 ÷ 4 = 64)                         Each block is 128 numbers wide (256÷2 =128) 
+             The original third octet goes from:0 → 255                           The original Fourth octet goes from:0 → 255
+             Split that into 4 equal chunks:                                      Split that into 4 equal chunks:
+             0   → 63                                                             0   → 127
+             64  → 127                                                            128 → 255
+             128 → 191                                                            Subnet 1:
+             192 → 255                                                              10.0.0.0/25
+             Subnet 1:                                                              Range: 10.0.0.0 → 10.0.0.127/25
+                  10.0.0.0/18                                                     Subnet 2:
+                  Range: 10.0.0.0 → 10.0.63.255                                     10.0.0.128/25                             
+             Subnet 2:                                                              Range: 10.0.0.128 → 10.0.0.255
                   10.0.64.0/18
                   Range: 10.0.64.0 → 10.0.127.255
              Subnet 3:
@@ -66,5 +66,53 @@
                   10.0.192.0/18
                   Range: 10.0.192.0 → 10.0.255.255
 
-
-
+# Subnets:
+     A subnet is a smaller network inside a VPC, tied to a single Availability Zone.
+     Types:
+      🔹 Public Subnet
+            -Has route to Internet Gateway
+            -Used for Load Balancers, Bastion Hosts
+      🔹 Private Subnet
+            -No direct internet route
+            -Used for App servers, Databases
+# Route Tables:
+    A route table controls where network traffic goes.Each subnet is associated with one route table.
+    Types:
+      -Main route table (default)
+      -Custom route tables
+# Internet Gateway (IGW):
+    An Internet Gateway enables communication between VPC and Internet.It is:
+      -Attached to VPC
+      -Horizontally scalable
+      -Managed by AWS
+    For a subnet to be public:
+      -VPC must have IGW attached
+      -Subnet route table must contain: 0.0.0.0/0 → IGW
+      -Instance must have public IP
+# NAT Gateway:
+    Allows private subnet instances to access the internet.WITHOUT allowing inbound internet traffic.
+    Used for:
+      -OS updates
+      -Downloading packages
+      -Accessing APIs
+# Network ACL (Access Control List):
+    Network ACL is a stateless subnet-level firewall that controls inbound and outbound traffic for subnets.
+    Key Characteristics:
+      -Stateless
+      -Evaluates inbound AND outbound rules
+      -Rules are numbered
+      -Allows and Denies both possible 
+    Example:
+      | Rule # | Type | Source    | Allow/Deny |
+      | ------ | ---- | --------- | ---------- |
+      | 100    | HTTP | 0.0.0.0/0 | Allow      |
+      | 200    | ALL  | 0.0.0.0/0 | Deny       |
+   
+    Security Group vs NACL:
+      Security Groups are stateful, meaning return traffic is automatically allowed if inbound traffic is permitted. Network       ACLs are stateless, so both inbound and outbound rules must be explicitly defined because the NACL does not track            connection state.
+    
+      | Security Group | NACL         |
+      | -------------- | ------------ |
+      | Instance-level | Subnet-level |
+      | Stateful       | Stateless    |
+      | Allow only     | Allow & Deny |
