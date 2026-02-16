@@ -108,9 +108,11 @@
       Shield → DDoS protection
       WAF → Web application firewall
       GuardDuty → Threat detection
+      Macie detects PII
       Inspector → Vulnerability scanning
       Artifact → Compliance reports
       KMS → Encryption key management
+      
 
 1️⃣1️⃣ Well-Architected Framework (Know All 6)
       Operational Excellence
