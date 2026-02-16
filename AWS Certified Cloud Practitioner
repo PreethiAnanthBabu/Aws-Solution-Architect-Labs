@@ -56,8 +56,8 @@
       | Aurora   | High-performance relational |
       | DynamoDB | NoSQL                       |
       | Redshift | Data warehouse              |
-
       | DMS      | Database migration          |
+
 6️⃣ Networking Essentials
       VPC = Isolated virtual network
       Security Group = Instance-level firewall (stateful)
@@ -68,3 +68,73 @@
       Global Accelerator = Low latency via AWS backbone
       Security Group → allow rules only
       NACL → allow + deny rules
+
+7️⃣ Monitoring & Logging
+      | Service         | Purpose                                  |
+      | --------------- | ---------------------------------------- |
+      | CloudWatch      | Metrics + alarms                         |
+      | CloudTrail      | API logging                              |
+      | Config          | Resource configuration history           |
+      API activity? → CloudTrail
+      Config change tracking? → Config
+      Metrics? → CloudWatch
+
+8️⃣ Pricing & Billing 
+      Pricing Models
+         On-Demand → No commitment
+         Reserved Instances → 1 or 3 year commitment
+         Savings Plans → Flexible commitment (better modern answer)
+         Spot → Up to 90% discount, interruptible
+         Dedicated Hosts → Compliance needs
+      Cost Tools
+        Cost Explorer → Analyze & forecast
+        Budgets → Alerts
+        Pricing Calculator → Estimate before deploying
+        Consolidated Billing → Multiple accounts under one payer
+        Trusted Advisor → Cost + security + limits recommendations
+
+9️⃣ IAM Essentials   
+      IAM User → Person/app
+      IAM Role → Temporary credentials
+      IAM Policy → JSON permissions
+      Root user → Lock it down + MFA
+      Always follow Least Privilege
+      Root Best Practices:
+        Enable MFA
+        Don’t use daily
+        No access keys
+
+🔟 Security Services
+      Shield → DDoS protection
+      WAF → Web application firewall
+      GuardDuty → Threat detection
+      Inspector → Vulnerability scanning
+      Artifact → Compliance reports
+      KMS → Encryption key management
+
+1️⃣1️⃣ Well-Architected Framework (Know All 6)
+      Operational Excellence
+      Security
+      Reliability
+      Performance Efficiency
+      Cost Optimization
+      Sustainability
+      RPO = Data loss tolerance
+      RTO = Downtime tolerance
+
+1️⃣2️⃣ Disaster Recovery
+      | Strategy         | Cost    | Recovery Speed |
+      | ---------------- | ------- | -------------- |
+      | Backup & Restore | Lowest  | Slowest        |
+      | Pilot Light      | Low     | Medium         |
+      | Warm Standby     | Medium  | Fast           |
+      | Multi-site       | Highest | Fastest        |
+
+1️⃣3️⃣ Hybrid & Migration
+      Snowball → Physical data transfer
+      DataSync → Online data transfer
+      Storage Gateway → Hybrid storage
+      DMS → Database migration
+      Direct Connect → Dedicated network link
+      VPN → Encrypted tunnel
+
