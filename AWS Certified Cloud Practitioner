@@ -5,7 +5,7 @@
        High availability = Multi-AZ
        Disaster recovery = Multi-Region
 
-2️⃣ Shared Responsibility Model\
+2️⃣ Shared Responsibility Model
        1.AWS = Security of the Cloud
            -Physical hardware
            -Networking infrastructure
@@ -64,8 +64,8 @@
       NACL = Subnet-level firewall (stateless)
       Route 53 = DNS
       ELB = Distributes traffic across AZs
-      CloudFront = CDN(Content Delivery Network)
-      Global Accelerator = Low latency via AWS backbone
+      CloudFront = CDN(Content Delivery Network)(best for static content)
+      Global Accelerator = Low latency via AWS backbone(best for dynamic content)
       Security Group → allow rules only
       NACL → allow + deny rules
 
