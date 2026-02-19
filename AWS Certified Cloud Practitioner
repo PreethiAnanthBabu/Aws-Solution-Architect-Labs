@@ -57,6 +57,7 @@
       | DynamoDB | NoSQL                       |
       | Redshift | Data warehouse              |
       | DMS      | Database migration          |
+      Amazon ElastiCache is a managed in-memory data store and cache service 
 
 6️⃣ Networking Essentials
       VPC = Isolated virtual network
@@ -142,6 +143,10 @@
       DataSync → Online data transfer
       Storage Gateway → Hybrid storage
       DMS → Database migration
-      Direct Connect → Dedicated network link
+      Direct Connect →  Dedicated network link
       VPN → Encrypted tunnel
+      Repurchase 'Drop and shop'
+      Refactor 'Re-architect'
+      Rehost  'Lift and shift' 
+      Replatform 'Lift, tinker, and shift'
 
