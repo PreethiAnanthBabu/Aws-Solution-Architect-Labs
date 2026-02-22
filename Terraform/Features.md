@@ -29,3 +29,13 @@
          In AWS projects, state is usually stored remotely in:
             -S3
             -DynamoDB (for state locking)
+     4️⃣ Modules - A Terraform module is just a reusable folder of Terraform code that you can call multiple times with                         different inputs.
+         Types of Terraform Modules:
+            -Root Module - The main directory where you run.Every Terraform project has one root module.
+                           terraform init
+                           terraform apply
+            -Child Module - A module called by the root module.
+                            Example:
+                            module "vpc" {
+                              source = "./modules/vpc"
+                            }
