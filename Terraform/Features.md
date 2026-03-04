@@ -39,3 +39,27 @@
                             module "vpc" {
                               source = "./modules/vpc"
                             }
+# Pattern:
+     Terraform language = HCL (HashiCorp Configuration Language)
+     
+     BLOCK_TYPE "RESOURCE_TYPE" "NAME" {
+     ATTRIBUTE = VALUE
+     }
+     
+     Example:
+     
+     resource "aws_instance" "web" {
+     ami           = "ami-123"
+     instance_type = "t3.micro"
+     }
+
+     | Part             | Meaning                    |
+     | ---------------- | -------------------------- |
+     | resource         | Terraform block type       |
+     | "aws_instance"   | AWS resource type          |
+     | "web"            | name you give the resource |
+     | { }              | block where settings go    |
+     | ami              | attribute                  |
+     | "ami-123"        | value                      |
+
+     
