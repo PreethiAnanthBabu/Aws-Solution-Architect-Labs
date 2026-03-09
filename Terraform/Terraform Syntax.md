@@ -50,5 +50,64 @@
         Env     = "dev"
         }
 
-# Variables        
+# Variables  
+     Use the value provided by the user.They are values that someone running Terraform can change.So variables make your          Terraform flexible and reusable 
         
+        variable "region" {
+        type = string
+        }
+
+     Used like:
+        
+        region = var.region 
+
+# Locals 
+     Think of locals as internal helper values.They are calculated inside Terraform and cannot be changed by the user.
+
+        locals {
+        project_name = "three-tier-app"
+        }
+
+     Used like:
+     
+        Name = local.project_name
+
+     Use Variables When - User should change the value.Environment differences exist
+        Examples:
+           -region
+           -instance type
+           -VPC CIDR
+           -DB password
+     Use Locals When - Value is calculated.Value repeats many times.Value depends on variables
+        Examples:
+           -subnet CIDR calculations
+           -naming conventions
+           -common tags  
+
+# Count
+     count tells Terraform to create multiple copies of a resource automatically.
+     Without count, you must write resources manually.
+        
+        resource "aws_subnet" "public" {
+        count = 2
+        }
+        
+     Terraform creates:  
+     
+        aws_subnet.public[0]
+        aws_subnet.public[1]  
+
+# Output
+     Outputs show results after apply.
+
+        output "alb_dns_name" {
+        value = aws_lb.app_alb.dns_name
+        }
+
+# Plan and apply
+     terraform init → download provider/plugins
+     terraform fmt → format files
+     terraform validate → syntax check
+     terraform plan → preview
+     terraform apply → create
+     terraform destroy → remove        
