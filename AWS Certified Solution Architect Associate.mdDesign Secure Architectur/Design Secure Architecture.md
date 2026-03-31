@@ -76,3 +76,22 @@ Using:
 | Corporate login         | SAML / OIDC federation  |
 | Temporary access        | IAM Role                |
 | S3 fine-grained access  | IAM + Bucket Policy     |
+
+# Network Security
+🌐 1. Private Subnet → Internet Access
+✅ Correct Answer:
+Use:
+    NAT Gateway
+❌ NOT:
+    Internet Gateway
+💡 Why?
+    Private subnets don’t have direct internet access
+    NAT Gateway allows:
+        Outbound internet traffic
+        Blocks inbound traffic
+🧠 Exam Clue Words:
+    “Private subnet needs internet access”
+    “Download updates / call external API”
+👉 Answer = NAT Gateway
+
+
