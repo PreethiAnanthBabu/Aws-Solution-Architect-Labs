@@ -94,4 +94,51 @@ Use:
     “Download updates / call external API”
 👉 Answer = NAT Gateway
 
+🔐 2. Restrict Traffic → Security Groups vs NACLs
+🔹 Security Groups (SG)
+      Stateful
+      Applied to instances (ENIs)
+      Allow rules only
+ Use: security Group
+🔹 NACLs
+      Stateless
+      Applied at subnet level
+      Allow + Deny rules
+ Use: Network ACL
 
+🛡️ 3. DDoS Protection
+✅ Default Protection:
+    AWS Shield Standard
+    Free
+    Protects against common attacks
+🚀 Advanced Protection:
+    AWS Shield Advanced
+    Paid
+    Advanced detection + response
+🧠 Exam Clues:
+   “Automatic protection” → Shield Standard
+   “Enterprise / enhanced protection” → Shield Advanced
+
+🌍 4. Web Attack Protection
+✅ Correct Combo:
+     AWS WAF
+     Amazon CloudFront OR
+     Application Load Balancer
+💡 Why?
+ WAF filters:
+      SQL injection
+      XSS
+      IP blocking
+ CloudFront/ALB = entry point for traffic
+🧠 Exam Clues:
+     “Protect against SQL injection / XSS”
+👉 Answer = WAF
+
+| Scenario                  | Correct Answer       |
+| ------------------------- | -------------------- |
+| Private subnet → internet | NAT Gateway          |
+| Instance-level firewall   | Security Group       |
+| Subnet-level control      | NACL                 |
+| Block specific IP         | NACL / WAF           |
+| DDoS protection           | AWS Shield           |
+| Web attack protection     | WAF + CloudFront/ALB |
