@@ -1,4 +1,4 @@
-# Domain 1: Design Secure Architectures (30%)
+# IAM & Access Control
 🔐 1. Cross-Account Access → IAM Role + STS (NOT credentials)
 ✅ Correct Approach:
 Use:
