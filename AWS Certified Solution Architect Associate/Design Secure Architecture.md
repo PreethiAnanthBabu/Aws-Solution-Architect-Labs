@@ -126,9 +126,9 @@ Use:
      Application Load Balancer
 💡 Why?
  WAF filters:
-      SQL injection
-      XSS
-      IP blocking
+     SQL injection
+     XSS
+     IP blocking
  CloudFront/ALB = entry point for traffic
 🧠 Exam Clues:
      “Protect against SQL injection / XSS”
@@ -142,3 +142,76 @@ Use:
 | Block specific IP         | NACL / WAF           |
 | DDoS protection           | AWS Shield           |
 | Web attack protection     | WAF + CloudFront/ALB |
+
+# Data Security:
+🔐 1. Encryption at Rest → KMS
+✅ Use:
+     AWS Key Management Service- Organizations use AWS KMS to encrypt data at rest in services like Amazon S3, Amazon RDS, and Amazon EBS, to secure secrets, and to control                                  digital signing operations.
+🔑 Key Types:
+     CMK (Customer Managed Key)
+         → Full control (rotation, policies)
+     AWS-managed keys
+         → Auto-managed by AWS (less control)
+🧠 Exam Thinking:
+    “Need control / audit / rotation settings” → CMK
+    “Simple encryption” → AWS-managed key         
+
+🔒 2. Encryption in Transit → TLS + ACM
+✅ Use:
+     TLS (Transport Layer Security)
+     AWS Certificate Manager- It enables secure network communications and the protection of websites and applications without requiring users to manually handle                                          certificate creation or renewal.Integrations with Amazon CloudFront, Elastic Load Balancing, Amazon API Gateway
+💡 Why?
+     TLS encrypts data over the network
+     ACM provides:
+         Free SSL/TLS certificates
+         Auto-renewal
+🧠 Exam Clues:
+    “Secure communication / HTTPS”
+👉 Answer = TLS + ACM    
+
+🕵️ 3. Sensitive Data Discovery → Macie
+✅ Use:
+     Amazon Macie- Organizations use Macie to meet regulatory and compliance requirements like GDPR, HIPAA, and PCI DSS. It supports risk assessments, data governance                          initiatives, and incident response workflows by highlighting where sensitive data resides and how it’s being accessed.
+💡 What it does:
+     Scans S3 for:
+        PII (Personally Identifiable Information)
+        Sensitive data leaks
+🧠 Exam Clues:
+    “Find sensitive data in S3”
+    “Detect data exposure”
+👉 Answer = Macie
+
+🔑 4. Secrets Management → Secrets Manager
+✅ Use:
+     AWS Secrets Manager
+💡 What it stores:
+     DB credentials
+     API keys
+     Tokens
+❌ Avoid:
+     Hardcoding credentials in code
+🧠 Why?
+     Encryption via KMS
+     Automatic rotation
+     Secure access via IAM
+⚠️ TRAP: Credential Rotation
+❗ Question Pattern:
+    “Rotate credentials automatically”
+✅ Correct Answer:
+   👉 Secrets Manager
+❌ Wrong:
+     AWS Systems Manager Parameter Store (basic tier)
+💡 Why?
+     Parameter Store:
+          Stores secrets ✅
+          NO automatic rotation (basic tier) ❌
+     Secrets Manager:
+          Built-in rotation via Lambda ✅
+
+ | Scenario                 | Answer          | Meaning                |
+ | ------------------------ | --------------- | ---------------------- |
+ | Encryption at rest       | KMS (CMK)       | Key Management Service |
+ | Encryption in transit    | TLS + ACM       | Secure data transfer   |
+ | Sensitive data discovery | Macie           | Detect PII in S3       |
+ | Store secrets            | Secrets Manager | Secure credentials     |
+ | Auto rotation            | Secrets Manager | Not Parameter Store    |
