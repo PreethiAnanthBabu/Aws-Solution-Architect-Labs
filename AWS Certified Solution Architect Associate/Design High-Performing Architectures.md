@@ -72,3 +72,67 @@ EFS
 | Low-latency storage     | EBS                |
 | Big data analytics      | S3 + Athena / Glue |
 | Millions of small files | S3                 |
+
+# Compute Optimization
+🖥️ 1. Event-Driven Compute → Lambda
+✅ Use:
+     AWS Lambda
+💡 Why?
+    Runs code only when triggered
+    No servers to manage
+    Scales automatically
+🧠 Exam Clues:
+   “Event-driven”
+   “No infrastructure management”
+   “Run code in response to events”
+👉 Answer = Lambda
+
+📦 2. Containers → ECS / EKS
+✅ Use:
+     Amazon ECS
+     Amazon EKS
+💡 Differences:
+     Service Use Case
+          ECS	Simpler, AWS-native
+          EKS	Kubernetes-based
+💡 Why?
+     Package apps with dependencies
+     Portable and scalable
+🧠 Exam Clues:
+    “Containerized application”
+    “Microservices architecture”
+    “Kubernetes”
+👉 Answer = ECS or EKS
+
+📈 3. Auto Scaling → Dynamic Scaling
+✅ Use:
+     Amazon EC2 Auto Scaling
+💡 Types:
+     Dynamic scaling → based on metrics (CPU, requests)
+     Scheduled scaling → known patterns
+💡 Why?
+     Automatically adjusts capacity
+     Cost-efficient + highly available
+🧠 Exam Clues:
+    “Scale based on demand”
+    “Maintain performance under load”
+👉 Answer = Auto Scaling
+
+🧮 4. Batch Processing → AWS Batch
+✅ Use:
+     AWS Batch
+💡 Why?
+     Runs large-scale batch jobs
+     Automatically provisions compute
+🧠 Exam Clues:
+    “Batch workloads”
+    “Queue jobs and process later”
+👉 Answer = AWS Batch
+
+| Scenario             | Answer                |
+| -------------------- | --------------------- |
+| Event-driven compute | Lambda                |
+| Containers           | ECS / EKS             |
+| Auto scaling         | EC2 Auto Scaling      |
+| Batch jobs           | AWS Batch             |
+| Unpredictable spikes | Lambda / Auto Scaling |
