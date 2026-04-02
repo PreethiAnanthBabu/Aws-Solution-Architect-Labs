@@ -100,3 +100,64 @@ Use:
 🧠 Exam Clue:
     “Low cost solution”
 👉 Answer = Backup & Restore
+
+🔥 3. Pilot Light → Minimal Always Running
+💡 How it works:
+     Core components always running (e.g., DB)
+     App servers launched during failure
+✅ Pros:
+     Faster than backup
+     Moderate cost
+❌ Cons:
+     Still some startup delay
+🧠 Exam Clue:
+    “Critical core system always running”
+
+🌤️ 4. Warm Standby → Scaled-Down Environment
+💡 How it works:
+     Full system running in another region
+     Smaller capacity
+✅ Pros:
+     Faster recovery than Pilot Light
+❌ Cons:
+     Higher cost
+🧠 Exam Clue:
+    “Reduced capacity environment already running”
+👉 Answer = Warm Standby
+
+🌍 5. Multi-Site Active/Active → Fastest, Most Expensive
+💡 How it works:
+     Full system running in multiple regions
+     Traffic distributed across regions
+✅ Pros:
+     Near-zero downtime
+     Near-zero data loss
+❌ Cons:
+     Most expensive
+     Complex
+🧠 Exam Clue:
+    “Highly available globally”
+    “No downtime”
+👉 Answer = Active/Active
+
+⚠️ TRAP: RTO/RPO Near Zero
+❗ Question Pattern:
+    “RTO and RPO must be near zero”
+    “Minimal downtime and no data loss”
+✅ Correct Answer:
+👉 Multi-site Active/Active
+💡 Why?
+     System is already running everywhere
+     No need to “recover”—just reroute traffic
+❌ Wrong Answers:
+     Warm Standby → still some delay
+     Pilot Light → requires scaling up
+     Backup → too slow
+
+| Strategy         | Cost     | RTO       | RPO       |
+| ---------------- | -------- | --------- | --------- |
+| Backup & Restore | 💲       | High      | High      |
+| Pilot Light      | 💲💲     | Medium    | Medium    |
+| Warm Standby     | 💲💲💲   | Low       | Low       |
+| Active/Active    | 💲💲💲💲 | Near Zero | Near Zero |
+
