@@ -228,3 +228,57 @@ EFS
     “Low latency content delivery”
     “Static or dynamic content acceleration”
 👉 Answer = CloudFront
+
+🔗 2. Hybrid Cloud → Direct Connect / VPN
+✅ Use:
+     AWS Direct Connect
+     AWS VPN
+💡 Differences:
+     Service	                         Use Case
+      VPN	                       Quick setup, over internet
+      Direct Connect	             Dedicated, stable, high bandwidth
+🧠 Exam Clues:
+    “On-premises to AWS”
+    “Hybrid architecture”
+👉 Answer = VPN or Direct Connect
+
+⚖️ 3. Load Balancing → ALB vs NLB vs GWLB
+✅ Use:
+     Application Load Balancer
+     Network Load Balancer
+     Gateway Load Balancer
+💡 Comparison:
+     Load Balancer	     Layer	                  Use Case
+       ALB         L7 (HTTP/HTTPS)	             Web apps, routing
+       NLB	    L4 (TCP/UDP)	             High performance, static IP
+       GWLB	    L3/L4	                       Security appliances
+🧠 Exam Clues:
+    “HTTP/HTTPS routing” → ALB
+    “Ultra high performance / TCP” → NLB
+    “Firewall / inspection” → GWLB
+
+| Scenario                | Answer               |
+| ----------------------- | -------------------- |
+| Global content delivery | CloudFront           |
+| Hybrid cloud            | VPN / Direct Connect |
+| HTTP load balancing     | ALB                  |
+| TCP / static IP         | NLB                  |
+| Appliance routing       | GWLB                 |
+
+# Data Pipelines
+🔄 1. Streaming Data → Kinesis
+✅ Use:
+     Amazon Kinesis Data Streams
+     Amazon Kinesis Data Firehose
+💡 Differences:
+     Service	        Use Case
+     Data Streams	     Real-time processing (custom apps)
+Firehose	Load to S3/Redshift/OpenSearch (managed)
+💡 Why?
+Handles continuous, real-time data
+Scales automatically
+🧠 Exam Clues:
+“Streaming data”
+“Real-time ingestion”
+
+👉 Answer = Kinesis
