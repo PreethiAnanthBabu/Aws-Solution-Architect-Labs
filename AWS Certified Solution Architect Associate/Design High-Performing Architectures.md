@@ -136,3 +136,95 @@ EFS
 | Auto scaling         | EC2 Auto Scaling      |
 | Batch jobs           | AWS Batch             |
 | Unpredictable spikes | Lambda / Auto Scaling |
+
+# Database Performance
+🗄️ 1. Read-Heavy Workloads → Read Replicas (RDS)
+✅ Use:
+     Amazon RDS Read Replicas
+💡 Why?
+     Offload read traffic from primary DB
+     Scale horizontally for reads
+🧠 Exam Clues:
+    “High read traffic”
+    “Improve read performance”
+👉 Answer = Read Replicas
+
+⚡ 2. Write-Heavy Workloads → DynamoDB
+✅ Use:
+     Amazon DynamoDB
+💡 Why?
+     Handles massive write throughput
+     Fully managed + auto scaling
+⚠️ Important:
+👉 Partition key design matters
+     Good key → Even load → Fast ⚡
+     Bad key → Hot partition → Throttle(rejecting the request) 🚫
+🧠 Exam Clues:
+    “High write throughput”
+    “Massive scale / NoSQL”
+👉 Answer = DynamoDB
+
+🚀 3. Caching → ElastiCache
+✅ Use:
+     Amazon ElastiCache
+     Redis
+     Memcached
+💡 Why?
+     Reduces DB load
+     Speeds up response time
+🧠 Exam Clues:
+    “Reduce latency”
+    “Cache frequently accessed data”
+👉 Answer = ElastiCache
+
+📊 4. Analytics → Redshift
+✅ Use:
+     Amazon Redshift
+💡 Why?
+     Optimized for:
+     OLAP (analytics queries)
+     Large datasets
+🧠 Exam Clues:
+    “Data warehouse”
+    “Complex queries / BI tools”
+👉 Answer = Redshift
+
+⚠️ TRAP: Sub-Millisecond Latency
+❗ Question Pattern:
+    “Ultra-low latency”
+    “Sub-millisecond response time”
+✅ Correct Answers:
+👉 DynamoDB + DAX
+👉 OR Redis (ElastiCache)
+💡 Why?
+   🔹 DynamoDB + DAX:
+        DAX = DynamoDB Accelerator (in-memory cache)
+        Microsecond latency
+   🔹 Redis:
+        In-memory data store
+        Extremely fast reads/writes
+❌ Wrong Answers:
+     RDS (too slow for sub-ms)
+     Redshift (analytics, not low-latency)
+
+| Scenario       | Answer                 |
+| -------------- | ---------------------- |
+| Read-heavy DB  | RDS Read Replicas      |
+| Write-heavy DB | DynamoDB               |
+| Caching        | ElastiCache            |
+| Analytics      | Redshift               |
+| Sub-ms latency | DynamoDB + DAX / Redis |
+
+# Networking & Edge
+🌍 1. Global Users → CloudFront + Edge Locations
+✅ Use:
+     Amazon CloudFront
+     Edge Locations
+💡 Why?
+     Content cached closer to users globally
+     Reduces latency dramatically
+🧠 Exam Clues:
+    “Users worldwide”
+    “Low latency content delivery”
+    “Static or dynamic content acceleration”
+👉 Answer = CloudFront
