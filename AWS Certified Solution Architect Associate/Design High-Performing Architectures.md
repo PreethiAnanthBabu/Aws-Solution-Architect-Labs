@@ -271,14 +271,67 @@ EFS
      Amazon Kinesis Data Streams
      Amazon Kinesis Data Firehose
 💡 Differences:
-     Service	        Use Case
+       Service	                   Use Case
      Data Streams	     Real-time processing (custom apps)
-Firehose	Load to S3/Redshift/OpenSearch (managed)
+     Firehose        	Load to S3/Redshift/OpenSearch (managed)
 💡 Why?
-Handles continuous, real-time data
-Scales automatically
+     Handles continuous, real-time data
+     Scales automatically
 🧠 Exam Clues:
-“Streaming data”
-“Real-time ingestion”
-
+    “Streaming data”
+    “Real-time ingestion”
 👉 Answer = Kinesis
+
+🧪 2. ETL (Extract, Transform, Load) → Glue
+✅ Use:
+     AWS Glue
+💡 What it does:
+     Extract → from source
+     Transform → clean/process     
+     Load → into S3, Redshift, etc.
+🧠 Exam Clues:
+    “Data transformation”
+    “ETL pipeline”
+👉 Answer = Glue
+
+🔍 3. Query Data → Athena
+✅ Use:
+     Amazon Athena
+💡 Why?
+     Run SQL queries directly on S3
+     No infrastructure needed
+🧠 Exam Clues:
+    “Query data in S3”
+    “Serverless SQL”
+👉 Answer = Athena
+
+⚠️ TRAP: Real-Time Analytics Dashboard
+❗ Question Pattern:
+    “Real-time dashboard”
+    “Live analytics”
+    “Streaming visualization”
+✅ Correct Architecture:
+👉 Kinesis + Lambda + OpenSearch
+Use:
+     Amazon Kinesis
+     AWS Lambda
+     Amazon OpenSearch Service
+💡 How it works:
+     Kinesis ingests real-time data
+     Lambda processes/transforms it
+     OpenSearch indexes + powers dashboards
+💡 Why not Athena?
+     Athena = batch queries
+     NOT real-time dashboards
+❌ Common Wrong Answers:
+     S3 + Athena → too slow
+     Glue → ETL, not real-time
+
+| Scenario            | Answer                        |
+| ------------------- | ----------------------------- |
+| Streaming ingestion | Kinesis                       |
+| ETL processing      | Glue                          |
+| Query S3 data       | Athena                        |
+| Real-time dashboard | Kinesis + Lambda + OpenSearch |
+
+
