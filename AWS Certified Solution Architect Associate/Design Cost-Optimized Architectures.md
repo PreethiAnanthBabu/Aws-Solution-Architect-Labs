@@ -130,3 +130,129 @@ Reserved Instances
 | Ultra-cheap archive         | Deep Archive |
 | Rare + instant retrieval    | S3 IA        |
 
+# Database Cost Optimization
+🗄️ 1. Serverless Database → Aurora Serverless
+✅ Use:
+     Amazon Aurora Serverless
+💡 Why?
+     Automatically scales capacity up/down
+     Pay only for what you use
+🧠 Exam Clues:
+    “Intermittent usage”
+    “Unpredictable workload”
+    “Cost-efficient database”
+👉 Answer = Aurora Serverless
+
+⚡ 2. No Administration → DynamoDB
+✅ Use:
+     Amazon DynamoDB
+💡 Why?
+     Fully managed (no servers, no patching)
+     Automatic scaling
+     Pay-per-request option
+🧠 Exam Clues:
+    “No operational overhead”
+    “Fully managed database”
+👉 Answer = DynamoDB
+
+📉 3. Right-Sizing → Smaller Instances
+✅ Use:
+     Adjust DB instance types (RDS/Aurora)
+💡 Why?
+     Avoid over-provisioning
+     Reduce unnecessary cost
+🧠 Exam Clues:
+    “Underutilized resources”
+    “Reduce cost without redesign”
+👉 Answer = Right-sizing
+
+⚠️ TRAP: Variable Workload Database
+❗ Question Pattern:
+    “Workload fluctuates”
+    “Unpredictable usage patterns”
+✅ Correct Answer:
+👉 Aurora Serverless
+💡 Why?
+     Automatically scales:
+     Compute capacity
+     Based on demand
+❌ Wrong Answers:
+     Provisioned RDS → fixed capacity
+     Large instances → wasteful
+
+| Scenario                 | Answer               |
+| ------------------------ | -------------------- |
+| Serverless relational DB | Aurora Serverless    |
+| No admin / NoSQL         | DynamoDB             |
+| Reduce cost              | Right-size instances |
+| Variable DB workload     | Aurora Serverless    |
+
+# Network Cost Optimization
+👇
+
+🌐 1. Reduce Data Transfer → CloudFront
+✅ Use:
+     Amazon CloudFront
+💡 Why?
+     Caches content at edge locations
+     Reduces:
+         Data transfer from origin (S3/EC2)
+         Latency
+🧠 Exam Clues:
+    “Reduce bandwidth cost”
+    “Global users accessing content”
+👉 Answer = CloudFront
+
+🚫💸 2. Avoid NAT Gateway Cost → VPC Endpoints
+✅ Use:
+     VPC Endpoints:
+         Gateway Endpoint
+         Interface Endpoint
+💡 Why?
+     NAT Gateway charges:
+         Hourly + data processing fees
+     VPC Endpoints:
+         Private access to AWS services
+         Avoid internet routing → cheaper
+🧠 Exam Clues:
+    “Private subnet accessing AWS services”
+    “Reduce NAT cost”
+👉 Answer = VPC Endpoints
+
+🔗 3. Internal Traffic → VPC Peering / PrivateLink
+✅ Use:
+     VPC Peering
+     PrivateLink
+💡 Why?
+     Keep traffic inside AWS network
+     Avoid internet + reduce cost
+💡 Differences:
+     Service	        Use Case
+     VPC Peering	Direct VPC-to-VPC
+     PrivateLink	Service-based access
+🧠 Exam Clues:
+    “Private communication between VPCs”
+👉 Answer = Peering / PrivateLink
+
+⚠️ TRAP: Cheap S3 Access from Private Subnet
+❗ Question Pattern:
+    “Access S3 from private subnet”
+    “Minimize cost”
+✅ Correct Answer:
+👉 Gateway VPC Endpoint
+💡 Why?
+     Gateway Endpoint for S3:
+         FREE
+         No NAT required
+         Private access
+❌ Wrong Answers:
+     NAT Gateway → costly
+     Internet Gateway → not for private subnet
+
+| Scenario                       | Answer                |
+| ------------------------------ | --------------------- |
+| Reduce data transfer cost      | CloudFront            |
+| Avoid NAT cost                 | VPC Endpoint          |
+| Private VPC communication      | Peering / PrivateLink |
+| S3 from private subnet (cheap) | Gateway Endpoint      |
+
