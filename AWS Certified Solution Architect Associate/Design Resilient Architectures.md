@@ -15,8 +15,6 @@
     “Automatic failover”
 👉 Answer = Multi-AZ
 
-AZ
-
 🌍 2. Multi-Region → Disaster Recovery (DR)
 ✅ Use:
      Deploy across:
