@@ -2,7 +2,7 @@
      Is the on-demand delivery of AWS computing resources—such as servers, storage, databases, networking, and software—over the internet, with pay-as-you-go pricing, instead of owning and maintaining physical data centers.In AWS,this means you use AWS data centers to run your applications rather than building your own infrastructure.
 
 # Cloud Service Models:
-     Cloud service models in AWS are IaaS, PaaS, and SaaS, which define how much responsibility is managed by AWS versus the customer.
+     Cloud service models in AWS are IaaS, PaaS, and SaaS, which define how much responsibility is managed by AWS VS the customer.
      | Layer        | IaaS | PaaS | SaaS |
      | ------------ | ---- | ---- | ---- |
      | Applications | You  | You  | AWS  |
@@ -23,12 +23,12 @@
        AWS Examples
          -EC2 instances in a VPC
          -S3 bucket
-	    -RDS databases
+	     -RDS databases
        Key characteristics
          -Pay-as-you-go
          -Easy to scale up/down
-	    -No hardware management
-	    -High availability
+	     -No hardware management
+	     -High availability
        Best for
          -Websites & mobile apps
          -Startups and enterprises
@@ -40,11 +40,11 @@
              On-premises private cloud
              AWS-hosted private cloud
 	  AWS Ways to Build Private Cloud
-         -Dedicated Hosts – physical servers for one customer
+        -Dedicated Hosts – physical servers for one customer
 	    -Dedicated Instances – EC2 on dedicated hardware
 	    -AWS Outposts – AWS services on-premises
        Key characteristics
-         -More control and isolation
+        -More control and isolation
 	    -Better for compliance
 	    -Higher cost
 	    -Less elastic than public cloud
@@ -95,7 +95,7 @@
 		      Add or remove more servers/instances to handle load.
               Think of it as “adding more machines to share the workload.”
          👉 AWS example: Auto Scaling, AWS Lambda
-	4.Speed & Agility
+	 4.Speed & Agility
         -Launch servers and services in minutes
         -Faster development and deployment
         👉 AWS example: CloudFormation, Elastic Beanstalk
