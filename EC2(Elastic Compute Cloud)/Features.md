@@ -12,30 +12,30 @@
 
 # EC2 Instance Types (Families):
     1. General Purpose (Balanced) -Best for most applications.
-       Family	Use Case
-          -t3 / t4g  	Burstable workloads (low-cost, dev/test)
-          -m5 / m6i  	Web servers, app servers
-          -a1	        ARM-based, cost-effective
+           Family	            Use Case
+          -t3 / t4g     Burstable workloads (low-cost, dev/test)
+          -m5 / m6i     Web servers, app servers
+          -a1	         ARM-based, cost-effective
     2. Compute Optimized (High CPU) -Best for compute-heavy workloads.
-       Family	Use Case  
-         -c5 / c6i	  High-performance web servers
+           Family	            Use Case  
+         -c5 / c6i	   High-performance web servers
          -c7g	        ARM-based compute workloads
     3. Memory Optimized (High RAM) -Best for memory-intensive applications.
-       Family	Use Case
-         -r5 / r6i	  Databases, in-memory caches
-         -x2idn	      SAP HANA, large memory apps
+          Family	            Use Case
+         -r5 / r6i	   Databases, in-memory caches
+         -x2idn	   SAP HANA, large memory apps
          -z1d	        High memory + high CPU
     4. Storage Optimized (High IOPS / Throughput) -Best for fast local storage.
-       Family	Use Case
-         -i3 / i4i	  NoSQL databases
+          Family	      Use Case
+         -i3 / i4i	   NoSQL databases
          -d3	        Data warehousing
          -h1	        Big data workloads
     5.Accelerated Computing (GPU / FPGA) -Best for ML, graphics, and HPC.
-      Family	Use Case
+         Family	              Use Case
         -p4 / p5	    Machine learning training
-        -g5	          Graphics, game streaming
-        -f1	          FPGA workloads
-        -inf2	        AI inference
+        -g5	         Graphics, game streaming
+        -f1	         FPGA workloads
+        -inf2	         AI inference
 # Instance Size Naming:
     Example: m5.large
        m → instance family
