@@ -1,6 +1,5 @@
 # Amazon EC2::
-     Amazon EC2 provides scalable, on-demand compute capacity in the form of virtual machines, allowing users to run applications with configurable CPU, memory, networking, 
-     and storage.
+     Amazon EC2 provides scalable, on-demand compute capacity in the form of virtual machines, allowing users to run applications with configurable CPU, memory, networking, and storage.
 
 # Key EC2 Concepts:
     -Instance: A virtual server
