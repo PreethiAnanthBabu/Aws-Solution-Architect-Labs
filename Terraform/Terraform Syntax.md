@@ -35,6 +35,13 @@
 
         cidr_block = "10.0.0.0/16"
 
+# Data blocks
+     data "RESOURCE_TYPE" "LOCAL_NAME" {
+       argument = value
+     }
+     means: read existing information. Terraform is not creating anything here.
+     data = get information from AWS, not create a resource.
+     
 # Data types (strings, numbers, lists, maps)   
      1.String
         name = "ire-3tier"
