@@ -90,7 +90,7 @@
       -Subnet route table must contain: 0.0.0.0/0 → IGW
       -Instance must have public IP
 # NAT Gateway:
-    Allows private subnet instances to access the internet.WITHOUT allowing inbound internet traffic.
+    Allows private subnet instances to access the internet.WITHOUT allowing inbound internet traffic.NAT Gateway itself must     normally be placed in a public subnet, and that public subnet must have a route to the Internet Gateway.
     Used for:
       -OS updates
       -Downloading packages
