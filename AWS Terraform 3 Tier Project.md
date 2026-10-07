@@ -69,6 +69,21 @@ CodeDeploy is responsible for putting your application onto the EC2 instances.
 It reads: appspec.yml
 CodeDeploy = deploy files and run deployment scripts on EC2.
 
+# Git commands
+git init - This initializes Git inside your current project folder. It creates a hidden .git directory so Git can start tracking versions of your files.
+
+git add . - prepare all current project files for commit
+
+git commit -m "Initial AWS Terraform 3 tier project" - It creates a Git commit from the files you previously staged with git                                                        add .
+                                                     -m(add the commit message directly)
+
+git branch -M main - renames current Git branch to main
+                   -M(force the rename if needed)
+
+git remote add origin YOUR_GITHUB_REPOSITORY - This command connects your local project to that GitHub repository and gives                                                 the remote the name origin.
+                                                     
+git remote -v - Displays the GitHub URL for fetch and push.
+
 
 
 
