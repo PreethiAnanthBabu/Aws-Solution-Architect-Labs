@@ -84,6 +84,8 @@ git remote add origin YOUR_GITHUB_REPOSITORY - This command connects your local 
                                                      
 git remote -v - Displays the GitHub URL for fetch and push.
 
+git push -u origin main - This command pushes local main branch to the GitHub remote named origin
+                        -u(Uploads local files to github)
 
 
 
