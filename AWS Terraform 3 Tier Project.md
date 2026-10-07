@@ -87,12 +87,14 @@ git remote -v - Displays the GitHub URL for fetch and push.
 git push -u origin main - This command pushes local main branch to the GitHub remote named origin
                         -u(Uploads local files to github)
 
+# CodeDeploy Service role
+The CodeDeploy service role gives the CodeDeploy service permission to manage deployments to my EC2 Auto Scaling instances. It is separate from the EC2 instance role, which gives permissions to the EC2 instances themselves.
 
-
-
-
-
-
+# CodeDeploy application
+The CodeDeploy Application is the logical container for my application deployment. It works with a deployment group that targets my Auto Scaling EC2 instances, and CodeDeploy uses the AppSpec file to copy application files and run deployment scripts.
+CodeDeploy Application = identifies the application being deployed
+Deployment Group = identifies where to deploy it
+AppSpec file = tells CodeDeploy how to deploy it
 
 
 
